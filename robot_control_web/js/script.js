@@ -1,12 +1,23 @@
 jQuery(document).ready(function($) {
    // Votre code ici avec les appels à la fonction $()
-	 M.AutoInit();
+   var video = document.querySelector("#videoElement");
+ 
+if (navigator.mediaDevices.getUserMedia) {       
+    navigator.mediaDevices.getUserMedia({video: true})
+  .then(function(stream) {
+    video.srcObject = stream;
+  })
+  .catch(function(err0r) {
+    console.log("Something went wrong!");
+  });
+}
 
-$('.menu-mobile .menu-m').click(function(){
-
-	$('.center div').addClass("masquer");
-	$("." + $(this).attr('id')).removeClass("masquer");
-});
-
+    var map;
+     function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+     }
 
 });
