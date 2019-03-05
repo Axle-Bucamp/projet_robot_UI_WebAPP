@@ -1,47 +1,106 @@
 body{
 	margin:0;
 	padding:0;
+	height: 100vh;
+	width: 100%;
 }
 
 html{
 	margin:0;
 	padding: 0;
-}
-label{
-	width:100%;
-	display: block;
-}
-select{
-	width: 60%;
-}
-button{
-	width: 30%;
-}
 
-#container {
-	float: right;
-    margin: 0px auto;
-    width: 80%;
-    min-height: 100vh;
-    background-color: green;
-}
-
-#videoElement {
-    width: 100%;
-    height: auto;
-    background-color: #666;
-}
-
-#option{
-	width: 20%;
-	float: left;
-	background-color: purple;
-	height: 70vh;
-}
-
-#map{
-	float: left;
-	width: 20%;
-	height: 15vh;
 	background-color: red;
+}
+
+.map{
+	height:100vh;
+	background-color: lightcoral;
+}
+
+.option-panel{
+	background-color:gainsboro;
+	height: 100vh;
+}
+
+.content{
+	background-color: snow;
+	min-height: 100vh;
+	width: 100%;
+	padding: 0;
+	margin:0;
+	text-align:center;
+}
+
+#first-row{
+	margin-bottom:0px;
+}
+
+video{
+	display: block;
+	margin-left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 50vh;
+
+}
+
+.marge-menu{
+	margin-top: 6em;
+}
+
+.menu-mobile{
+	position: fixed;
+	width: auto;
+	z-index: 100;
+	top:2em;
+	left:3em;
+}
+
+.menu-mobile .set{
+	color:grey;
+}
+
+.menu-mobile a{
+	margin-right: 1em;
+}
+
+#v{
+	min-height: 50vh;
+	max-width: 100%;
+	max-height: 100vh;
+	background-color: grey;
+}
+
+.capteur-etat .km{
+	color:black;
+}
+
+.capteur-etat .power{
+	color:lightgrey;
+}
+
+.capteur-etat{
+
+	position: fixed;
+	width: auto;
+	z-index: 100;
+	top:2em;
+	right:5em;
+
+}
+
+.capteur-etat a{
+	margin-right: 1em;
+}
+
+.content .masquer{
+	display:none;
+}
+
+@media (max-width: 640px) {
+/* CSS mobile ici */
+	.capteur-etat{
+		top:90vh;
+		right: 15em;
+
+	}
 }
