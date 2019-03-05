@@ -8,19 +8,15 @@ body{
 html{
 	margin:0;
 	padding: 0;
-
-	background-color: red;
+	background-color: lightgrey;
 }
 
 .map{
 	height:100vh;
-	background-color: lightcoral;
+	background-color: green;
 }
 
-.option-panel{
-	background-color:gainsboro;
-	height: 100vh;
-}
+
 
 .content{
 	background-color: snow;
@@ -44,7 +40,7 @@ video{
 }
 
 .marge-menu{
-	margin-top: 6em;
+	margin-top: 8em;
 }
 
 .menu-mobile{
@@ -101,6 +97,13 @@ video{
 	.capteur-etat{
 		top:90vh;
 		right: 15em;
+
+
+	}
+	.menu-mobile a{
+		margin-right: 5em;
+	}
+	.menu-mobile a:last-child{
 
 	}
 }
