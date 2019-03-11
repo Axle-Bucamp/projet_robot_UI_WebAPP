@@ -1,0 +1,110 @@
+body{
+	margin:0;
+	padding:0;
+	height: 100vh;
+	width: 100%;
+
+}
+
+html{
+	margin:0;
+	padding: 0;
+	background-color: lightgrey;
+}
+
+.map{
+	height:100vh;
+	background-color: green;
+}
+
+
+
+#content{
+	background-color: red;
+	
+	width: 100%;
+	padding: 0;
+	margin:0;
+	text-align:center;
+}
+
+#first-row{
+	margin-bottom:0px;
+
+}
+
+
+video{
+	display: block;
+	margin-left: 50%;
+	transform: translate(-50%, -50%);
+	margin-top: 50vh;
+
+}
+
+.marge-menu{
+	margin-top: 15vh;
+	background-color: snow;
+	min-height: 85vh;
+}
+
+.menu-mobile{
+	position: fixed;
+	width: auto;
+	z-index: 100;
+	top:2em;
+	left:3em;
+}
+
+.menu-mobile .set{
+	color:grey;
+}
+
+.menu-mobile a{
+	margin-right: 1em;
+}
+
+#v{
+	min-height: 50vh;
+	max-width: 100%;
+	max-height: 100vh;
+	background-color: grey;
+}
+
+.capteur-etat .km{
+	color:black;
+}
+
+.capteur-etat .power{
+	color:lightgrey;
+}
+
+.capteur-etat{
+
+	position: fixed;
+	width: auto;
+	z-index: 100;
+	top:2em;
+	right:5em;
+
+}
+
+.capteur-etat a{
+	margin-right: 1em;
+}
+
+.content .masquer{
+	display:none;
+}
+
+@media (max-width: 640px) {
+/* CSS mobile ici */
+	.capteur-etat{
+		top:90vh;
+		right: 15em;
+	}
+
+	.menu-mobile a{
+		margin-right: 5em;
+	}•
+}
