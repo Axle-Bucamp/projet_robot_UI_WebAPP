@@ -9,7 +9,7 @@ $('.menu-mobile .menu-m').click(function(){
 });
 
 //'fichier de config'
-var json = '{"1" :{"name":"found1", "text":"ok google, do my homeworks"}, "2":{"name":"found2", "text":"ok siri ..."},"3":{"name":"found3", "text":"not this one pls"}}';
+
 var jsonparse = JSON.parse(json);
 
 //generation du select
@@ -30,16 +30,21 @@ jQuery.each(jsonparse,function(key, value){
 
 $('select').formSelect('destroy');
 $("#activitySelector").formSelect();
-
+var selected = jsonparse["1"];
 //lorsque l'on selectionne un robot
 var activities = document.getElementById("activitySelector");
 activities.addEventListener("change", function() {
 	var a = $(this).val();
 	jQuery.each(jsonparse,function(key, value){
-			if(key === ""+ a){	
+			if(key === ""+ a){
+				selected = jsonparse[key];
 				jQuery.each(value,function(key2, value2){
 					if(key2 === "text"){
-						$("#robots_infos").html(value2);
+						$("#robots_infos").html("<p>" + value2 + "</p>");
+						$(".information p").html(value2);
+					}
+					if(key2 === "img"){
+						$("#robots_img").html("<img src='img/" + value2 + "'/>");
 					}
 			});	
 		}

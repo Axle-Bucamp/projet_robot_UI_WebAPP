@@ -2,6 +2,7 @@
   <html>
     <head>
       <!--Import Google Icon Font-->
+	<meta charset="utf-8" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
        <link rel="stylesheet" href="css/style.css">
@@ -16,9 +17,9 @@
 
  <!-- Dropdown Trigger -->
       <div class="menu-mobile">
-       <a class="btn-floating  waves-effect waves-light  red localisation menu-m" id="map" ><i class="material-icons">location_on</i></a>
+       <a class="btn-floating  waves-effect waves-light  purple localisation menu-m" id="map" ><i class="material-icons">location_on</i></a>
        <a class="btn-floating  waves-effect waves-light blue menu-m" id="video" ><i class="material-icons">videocam</i></a>
-       <a class="btn-floating  waves-effect waves-light green menu-m" id="stat" ><i class="material-icons">insert_chart</i></a>
+       <a class="btn-floating  waves-effect waves-light #00b0ff menu-m" id="stat" ><i class="material-icons">insert_chart</i></a>
 
       <a class='dropdown-trigger btn-floating  waves-effect waves-light white ' href='#' data-target='dropdown1'><i class="material-icons set">settings</i></a>
 
@@ -31,7 +32,7 @@
       </div>
 
     <div class="capteur-etat">
-       <a class="btn-floating red "><i class="material-icons power">power_settings_new</i></a>
+       <a class="btn-floating orange " id="marche"><i class="material-icons power">power_settings_new</i></a>
        <a class="btn white km"> 100 km/h</a>
       <!-- Dropdown Structure -->
       </div>
@@ -44,8 +45,8 @@
       <div class="col s12 content "id="content"> 
 
 
-      <div class="video masquer">  
-      <video id="v"  autoplay> </video>
+      <div class="video masquer marge-menu">  
+        <video id="v"  autoplay> </video>
       </div>
       
       <div class="col s12 masquer map"><p>map</p></div>
@@ -54,30 +55,34 @@
       <div class="connection">  
         <form class="col s12 marge-menu">
           
-        <div class="input-field col s12">
-          <select id="activitySelector">
+          <div class="input-field col s12">
+            <select id="activitySelector">
 
-          </select>
-          <label>Connection:</label>
+            </select>
+            <label>Connection:</label>
 
-          <div id="robots_infos">
-            
+            <div id="robots_infos">
+              
+            </div>
+  	    <div id="robots_img">
+              
+            </div>
           </div>
-
-        </div>
     </form>
       </div>
 
-      <div class="col s12 masquer information marge-menu"><p>information</p></div>
+      <div class="col s12 masquer information marge-menu">
+	<p></p>
+     </div>
       
       <!-- loader -->
       <div class="preloader-wrapper big active masquer loading">
           <div class="spinner-layer spinner-red-only">
             <div class="circle-clipper left">
               <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
               <div class="circle"></div>
             </div>
           </div>
@@ -94,7 +99,11 @@
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+      <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+      <script type="text/javascript" src="json/data.js"></script>
       <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/rosConnect.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
     </body>

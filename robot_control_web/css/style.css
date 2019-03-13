@@ -3,12 +3,14 @@ body{
 	padding:0;
 	height: 100vh;
 	width: 100%;
+
 }
 
 html{
 	margin:0;
 	padding: 0;
-	background-color: lightgrey;
+	background: lightgrey  url(../img/571.jpg) center fixed no-repeat;
+	background-size: cover;
 }
 
 .map{
@@ -18,9 +20,9 @@ html{
 
 
 
-.content{
-	background-color: snow;
-	min-height: 100vh;
+#content{
+	background-color: red;
+	
 	width: 100%;
 	padding: 0;
 	margin:0;
@@ -29,7 +31,9 @@ html{
 
 #first-row{
 	margin-bottom:0px;
+
 }
+
 
 video{
 	display: block;
@@ -39,8 +43,12 @@ video{
 
 }
 
+
+
 .marge-menu{
-	margin-top: 8em;
+	margin-top: 15vh;
+	background-color: snow;
+	min-height: 85vh;
 }
 
 .menu-mobile{
@@ -71,7 +79,7 @@ video{
 }
 
 .capteur-etat .power{
-	color:lightgrey;
+	color:white;
 }
 
 .capteur-etat{
@@ -97,13 +105,9 @@ video{
 	.capteur-etat{
 		top:90vh;
 		right: 15em;
-
-
 	}
+
 	.menu-mobile a{
 		margin-right: 5em;
-	}
-	.menu-mobile a:last-child{
-
-	}
+	}•
 }
