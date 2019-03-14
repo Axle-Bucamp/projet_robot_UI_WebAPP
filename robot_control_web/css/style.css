@@ -1,62 +1,78 @@
 body{
 	margin:0;
 	padding:0;
-	height: 100vh;
+	max-height: 100vh;
 	width: 100%;
-
 }
 
 html{
 	margin:0;
 	padding: 0;
-	background: lightgrey  url(../img/571.jpg) center fixed no-repeat;
+	background: lightgrey  url(../img/571.jpg)  center 12vh fixed no-repeat;
 	background-size: cover;
+	font-family: "serial",sans-serif;
 }
 
-.map{
-	height:100vh;
-	background-color: green;
+p{
+	margin-left: 2em;
+	font-size: 1.8em;
+	margin-right: 2em;
+	text-justify: auto;
 }
-
-
+h3{
+	margin-left: 1em;
+	font-size: 2.5em;
+	margin-right: 1em;
+}
+h2{
+	margin-left: 1em;
+	font-size: 2.5em;
+	margin-right: 1em;
+}
+img{
+	margin-left: 50%;
+	transform: translate(-50%);
+}
 
 #content{
-	background-color: red;
-	
+	opacity: 0.95;
 	width: 100%;
 	padding: 0;
 	margin:0;
-	text-align:center;
 }
 
 #first-row{
 	margin-bottom:0px;
-
 }
-
 
 video{
 	display: block;
 	margin-left: 50%;
 	transform: translate(-50%, -50%);
 	margin-top: 50vh;
-
 }
-
-
 
 .marge-menu{
-	margin-top: 15vh;
+	margin-top: 12vh;
 	background-color: snow;
-	min-height: 85vh;
+	opacity: 1;
 }
 
+#nav{
+	position: fixed;
+	width: 100%;
+	height: 12vh;
+	background-color: red;
+	z-index: 100;
+	opacity: 1;
+}
 .menu-mobile{
 	position: fixed;
 	width: auto;
 	z-index: 100;
 	top:2em;
 	left:3em;
+	opacity: 1;
 }
 
 .menu-mobile .set{
@@ -83,13 +99,18 @@ video{
 }
 
 .capteur-etat{
-
 	position: fixed;
 	width: auto;
 	z-index: 100;
 	top:2em;
 	right:5em;
 
+}
+
+.map{
+	height: 88vh;
+	width: 100%;
+	background-color: green;
 }
 
 .capteur-etat a{
@@ -100,14 +121,15 @@ video{
 	display:none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1030px) {
 /* CSS mobile ici */
 	.capteur-etat{
 		top:90vh;
-		right: 15em;
+		right: 50%;
+		transform: translate(+50%, +50%);
 	}
 
 	.menu-mobile a{
 		margin-right: 5em;
-	}•
+	}
 }

@@ -16,6 +16,7 @@
     <body>
 
  <!-- Dropdown Trigger -->
+ <div id="nav">
       <div class="menu-mobile">
        <a class="btn-floating  waves-effect waves-light  purple localisation menu-m" id="map" ><i class="material-icons">location_on</i></a>
        <a class="btn-floating  waves-effect waves-light blue menu-m" id="video" ><i class="material-icons">videocam</i></a>
@@ -36,7 +37,7 @@
        <a class="btn white km"> 100 km/h</a>
       <!-- Dropdown Structure -->
       </div>
-
+</div>
     <!-- Page Layout here -->
     <div class="row" id="first-row">
 
@@ -49,10 +50,10 @@
         <video id="v"  autoplay> </video>
       </div>
       
-      <div class="col s12 masquer map"><p>map</p></div>
+      <div class="col s12 masquer map marge-menu"><p>map</p></div>
       <div class="col s12 masquer stat marge-menu"><p>stat</p></div>
 
-      <div class="connection">  
+      <div class="connection masquer">  
         <form class="col s12 marge-menu">
           
           <div class="input-field col s12">
@@ -71,8 +72,15 @@
     </form>
       </div>
 
-      <div class="col s12 masquer information marge-menu">
-	<p></p>
+      <div class="col s12  information marge-menu">
+        <h2>Robot view UI:</h2>
+        <p>cette application à pour objectif de permettre de manière intuitive des information sur les robot connectés tel que la vue de leur camera, leur position dans l'espace, etc</p>
+        <p>pour changer de robot cliquer sur l'engrenage des parrametres puis connection</p>
+        <h3 class="nRobot">Robot actuel: <span></span></h3>
+	       <p class="rText"></p>
+         <div id="img">
+              
+  </div>
      </div>
       
       <!-- loader -->
