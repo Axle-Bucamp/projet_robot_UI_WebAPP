@@ -1,6 +1,4 @@
- var ros = new ROSLIB.Ros({
-    url : 'ws://localhost:9090'
-  });
+var ros = new ROSLIB.Ros();
   ros.on('connection', function() {
     console.log('Connected to websocket server.');
     //changer le capteur d'état marche
@@ -10,11 +8,14 @@
   ros.on('error', function(error) {
     console.log('Error connecting to websocket server: ', error);
     // capteur en orange pour erreur de connection
-        $(".capteur-etat #marche").removeClass("green");
+    $(".capteur-etat #marche").removeClass("green");
     $(".capteur-etat #marche").addClass("orange");
+
   });
   ros.on('close', function() {
     console.log('Connection to websocket server closed.');
+    $(".capteur-etat #marche").removeClass("green");
+    $(".capteur-etat #marche").addClass("orange");
     // capteur rouge 
 
   });
@@ -79,3 +80,4 @@
   maxVelX.get(function(value) {
     console.log('MAX VAL: ' + value);
   });
+

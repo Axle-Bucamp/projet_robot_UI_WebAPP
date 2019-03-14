@@ -10,7 +10,6 @@ $('.menu-mobile .menu-m').click(function(){
 
 //'fichier de config'
 
-var jsonparse = JSON.parse(json);
 
 //generation du select
 jQuery.each(jsonparse,function(key, value){
@@ -24,7 +23,7 @@ jQuery.each(jsonparse,function(key, value){
 });
 // init selection list
 $("#activitySelector").formSelect();
-var selected = jsonparse["1"];
+
 
 //lorsque l'on selectionne un robot
 var activities = document.getElementById("activitySelector");
@@ -34,6 +33,7 @@ activities.addEventListener("change", function() {
 });
 // gere le changement de robot (genere le html necess et change l'element courant selectionné)
 function robot_change(a) {
+ros.close();
   jQuery.each(jsonparse,function(key, value){
 			if(key === ""+ a){
 				selected = jsonparse[key];
@@ -49,11 +49,17 @@ function robot_change(a) {
 					if(key2 === "name"){
 						$(".information h3.nRobot span").html( value2);
 					}
-			});	
+			});
+			
+			console.log('interval');
+			
 		}
 	});
 }
 // premier appelle par défault
 robot_change("1");
+var intervalID = window.setInterval(function(){
+ros.connect(selected["url"]);
+},500);
 
 });
