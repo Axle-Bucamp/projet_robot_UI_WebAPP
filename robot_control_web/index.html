@@ -34,7 +34,7 @@
 	<h1>Robot's controler</h1>
     <div class="capteur-etat">
        <a class="btn-floating orange " id="marche"><i class="material-icons power">power_settings_new</i></a>
-       <a class="btn white km"> 100 km/h</a>
+       <a class="btn white km" id='vitesse'> 000 km/h</a>
       <!-- Dropdown Structure -->
       </div>
 </div>
@@ -47,7 +47,7 @@
 
 
       <div class="video masquer marge-menu">  
-        <video id="v"  autoplay> </video>
+       <img id="v" src="http://localhost:8080/stream?topic=/IMAGE_TOPIC" />
       </div>
       
       <div class="col s12 masquer map marge-menu"><p>map</p></div>
