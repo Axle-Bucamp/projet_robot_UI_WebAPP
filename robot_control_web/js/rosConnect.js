@@ -22,31 +22,11 @@ var ros = new ROSLIB.Ros();
     // capteur rouge 
 
   });
-  // Publishing a Topic
-  // ------------------
- /* var cmdVel = new ROSLIB.Topic({
-    ros : ros,
-    name : '/cmd_vel',
-    messageType : 'geometry_msgs/Twist'
-  });
-  var twist = new ROSLIB.Message({
-    linear : {
-      x : 0.1,
-      y : 0.2,
-      z : 0.3
-    },
-    angular : {
-      x : -0.1,
-      y : -0.2,
-      z : -0.3
-    }
-  });
-  cmdVel.publish(twist);*/
   // Subscribing to a Topic
   // ----------------------
   var listener = new ROSLIB.Topic({
     ros : ros,
-    name : '/bebop/cmd_vel',
+    name : selected["vitesse"],
     messageType : 'geometry_msgs/Twist'
   });
   listener.subscribe(function(message) {
@@ -58,7 +38,7 @@ var ros = new ROSLIB.Ros();
 // video topic 
  var imageTopic = new ROSLIB.Topic({
 	ros : ros,
- 	name : '/bebop/image_raw/compressed',
+ 	name : selected["video"],
 	messageType : 'sensor_msgs/CompressedImage'
 });
 
@@ -71,38 +51,26 @@ var ros = new ROSLIB.Ros();
 
 
 
+// position topic (longitude, latitude 
+ var position = new ROSLIB.Topic({
+	ros : ros,
+ 	name : selected["position"],
+	messageType : 'sensor_msgs/NavSatFix'
+});
+var map = new google.maps.Map(document.getElementById('mapHere'), {
+		  center: {lat: 0, lng: 0 },
+		  zoom: 19
+	    });;
+var marker = new google.maps.Marker({position: {lat: 0, lng: 0 }, map: map});;
+ position.subscribe(function(message) {
+    console.log('Received message on ' + listener.name + ': ' + message.latitude + ", "+  message.longitude);
+
+    marker.setPosition({lat: message.latitude, lng: message.longitude });
+    map.setCenter({lat: message.latitude, lng: message.longitude }); 
+  });
 
 
 
 
-  // Calling a service
-  // -----------------
- /* var addTwoIntsClient = new ROSLIB.Service({
-    ros : ros,
-    name : '/add_two_ints',
-    serviceType : 'rospy_tutorials/AddTwoInts'
-  });
-  var request = new ROSLIB.ServiceRequest({
-    a : 1,
-    b : 2
-  });
-  addTwoIntsClient.callService(request, function(result) {
-    console.log('Result for service call on '
-      + addTwoIntsClient.name
-      + ': '
-      + result.sum);
-  });*/
-  // Getting and setting a param value
-  // ---------------------------------
-  /*ros.getParams(function(params) {
-    console.log(params);
-  });
-  var maxVelX = new ROSLIB.Param({
-    ros : ros,
-    name : 'max_vel_y'
-  });
-  maxVelX.set(0.8);
-  maxVelX.get(function(value) {
-    console.log('MAX VAL: ' + value);
-  });*/
+
 

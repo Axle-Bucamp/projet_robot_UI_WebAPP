@@ -50,7 +50,7 @@
        <img id="v" src="http://localhost:8080/stream?topic=/IMAGE_TOPIC" />
       </div>
       
-      <div class="col s12 masquer map marge-menu"><p>map</p></div>
+      <div class="col s12 masquer map marge-menu" id="mapHere"></div>
       <div class="col s12 masquer stat marge-menu"><p>stat</p></div>
 
       <div class="connection masquer">  
@@ -83,19 +83,6 @@
   </div>
      </div>
       
-      <!-- loader -->
-      <div class="preloader-wrapper big active masquer loading">
-          <div class="spinner-layer spinner-red-only">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-                </div><div class="gap-patch">
-                  <div class="circle"></div>
-                </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>  
-      </div>
 
 
 
@@ -107,6 +94,9 @@
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3Ur2E3XacGQhno7HmOaknFLZWsAPlRe4"
+    async defer></script>
+
       <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
       <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
       <script type="text/javascript" src="json/data.js"></script>
